@@ -1,4 +1,4 @@
-﻿import streamlit as st
+import streamlit as st
 
 from transformers import (
     generate_action_plan,
@@ -54,6 +54,69 @@ div[data-testid="stAppViewContainer"] {
 
 header[data-testid="stHeader"] {
   background: transparent;
+}
+
+section[data-testid="stSidebar"] {
+  background: linear-gradient(180deg, #f4ede0 0%, #efe5d5 100%);
+  border-right: 1px solid rgba(29, 27, 22, 0.08);
+}
+
+section[data-testid="stSidebar"] > div:first-child {
+  padding-top: 1.6rem;
+}
+
+div[data-testid="stSidebarNav"] ul {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+div[data-testid="stSidebarNav"] li {
+  margin: 0.35rem 0;
+}
+
+div[data-testid="stSidebarNav"] a {
+  display: block;
+  padding: 0.6rem 0.9rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid transparent;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+div[data-testid="stSidebarNav"] a:hover {
+  border-color: rgba(46, 107, 93, 0.3);
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateX(4px);
+}
+
+div[data-testid="stSidebarNav"] a[aria-current="page"] {
+  background: linear-gradient(120deg, rgba(46, 107, 93, 0.22), rgba(227, 184, 108, 0.2));
+  border-color: rgba(46, 107, 93, 0.4);
+  color: var(--accent-dark);
+  box-shadow: 0 10px 18px rgba(29, 27, 22, 0.12);
+}
+
+button[title="Collapse sidebar"],
+button[title="Open sidebar"],
+div[data-testid="stSidebarCollapsedControl"] button {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(29, 27, 22, 0.12);
+  box-shadow: 0 10px 18px rgba(29, 27, 22, 0.12);
+}
+
+button[title="Collapse sidebar"] svg,
+button[title="Open sidebar"] svg,
+div[data-testid="stSidebarCollapsedControl"] button svg {
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 div.block-container {
